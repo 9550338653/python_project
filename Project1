@@ -1,0 +1,78 @@
+#Number Guessing Game.....
+print("Become the programmer you're meant to be!")
+import random
+def get_random_number():
+    return random.randint(1,100)
+def Easy():
+    print("You should guess in 10 chances ")
+    number = get_random_number()
+    print(number)
+    
+    for x in range(0,10):
+        guess_num = int(input("Enter the number: "))
+        if(guess_num == number):
+            print("Congo  you got correct ")
+            break
+        if(guess_num > number):
+            if(guess_num%number < 5):
+                print("you almost reached")
+            else:
+                print("Too high")
+        else:
+            if(guess_num%number < 5):
+                print("You almost reached")
+            else:
+                print("Too Low")
+    if x == 9:
+        print("You lost your chances are over")
+                
+def Hard():
+    print("You should guess in 5 chances ")
+    number = get_random_number()
+    print(number)
+    
+    for x in range(0,5):
+        guess_num = int(input("Enter the number: "))
+        if(guess_num == number):
+            print("Congo  you got correct ")
+            break
+        if(guess_num > number):
+            if(guess_num%number < 5):
+                print("you almost reached")
+            else:
+                print("Too high")
+        else:
+            if(guess_num%number < 5):
+                print("You almost reached")
+            else:
+                print("Too Low")
+    if x == 4:
+        print("You lost your chances are over")
+                
+def play():
+    if(user_want == 'easy'):
+        Easy()
+        
+    elif(user_want == "hard"):
+        Hard()
+        
+
+user_choice = input("enter Y to play the game and n to exit the game ")
+if user_choice == 'y':
+    user_want = input("enter the diificulty level ")
+    play()
+    if input("enter y to play again ") == 'y':
+        user_choice = input("enter Y to play the game and n to exit the game ")
+        if user_choice == 'y':
+            user_want = input("enter the diificulty level ")
+            play()
+        else:
+            print("Bye Bye")
+    else:
+        print("Good game")
+        
+    
+
+else:
+    print("exit game")
+    
